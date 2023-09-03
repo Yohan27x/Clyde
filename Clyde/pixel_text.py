@@ -90,7 +90,7 @@ class Newfont():
 
 font_list = []
 for i in range(60):
-    large_font = pygame.image.load("Images/Font/large_font.png").convert()
+    large_font = pygame.image.load("Clyde/Images/Font/large_font.png").convert()
     font_list.append(large_font)
 
 

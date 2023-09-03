@@ -24,7 +24,7 @@ clock = pygame.time.Clock()
 
 flags = pygame.SCALED
 
-game_icon = pygame.image.load('Images/game_window_icon/icon.png').convert_alpha()
+game_icon = pygame.image.load('Clyde/Images/game_window_icon/icon.png').convert_alpha()
 pygame.display.set_icon(game_icon)
 screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT), flags, vsync=1)
 pygame.display.set_caption('Clyde')
@@ -1730,7 +1730,7 @@ class Explosion(pygame.sprite.Sprite):
         pygame.sprite.Sprite.__init__(self)
         self.images = []
         for num in range(7):
-            img = pygame.image.load(f'Images/explosion/{num}.png').convert_alpha()
+            img = pygame.image.load(f'Clyde/Images/explosion/{num}.png').convert_alpha()
             img = pygame.transform.scale(img, (int(img.get_width() * scale), int(img.get_height() * scale)))
             self.images.append(img)
 
@@ -1827,7 +1827,7 @@ for row in range(ROWS):
     world_data.append(r)
 
 # load in level data and create world
-with open(f'Game_levels/level{LEVEL}_data.csv', newline='') as csvfile:
+with open(f'Clyde/Game_levels/level{LEVEL}_data.csv', newline='') as csvfile:
     reader = csv.reader(csvfile, delimiter=',')
     for x, row in enumerate(reader):
         for y, tile in enumerate(row):
@@ -2145,7 +2145,7 @@ while run:
                     tile_bg_scroll[0] = 0
                     tile_bg_scroll[1] = 0
                     world_data = reset_level()
-                    with open(f'Game_levels/level{LEVEL}_data.csv', newline='') as csvfile:
+                    with open(f'Clyde/Game_levels/level{LEVEL}_data.csv', newline='') as csvfile:
                         reader = csv.reader(csvfile, delimiter=',')
                         for x, row in enumerate(reader):
                             for y, tile in enumerate(row):
@@ -2189,7 +2189,7 @@ while run:
                         tile_bg_scroll[0] = 0
                         tile_bg_scroll[1] = 0
                         world_data = reset_level()
-                        with open(f'Game_levels/level{LEVEL}_data.csv', newline='') as csvfile:
+                        with open(f'Clyde/Game_levels/level{LEVEL}_data.csv', newline='') as csvfile:
                             reader = csv.reader(csvfile, delimiter=',')
                             for x, row in enumerate(reader):
                                 for y, tile in enumerate(row):

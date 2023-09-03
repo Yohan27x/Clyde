@@ -10,10 +10,10 @@ SCREEN_HEIGHT = 640
 pygame.display.set_caption('button')
 screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
 
-mouse_on_button_fx = pygame.mixer.Sound('audio/mouse_on_button.wav')
+mouse_on_button_fx = pygame.mixer.Sound('Clyde/audio/mouse_on_button.wav')
 mouse_on_button_fx.set_volume(0.2)
 
-click_on_button_fx = pygame.mixer.Sound('audio/click_on_button.wav')
+click_on_button_fx = pygame.mixer.Sound('Clyde/audio/click_on_button.wav')
 click_on_button_fx.set_volume(0.6)
 
 
@@ -29,7 +29,7 @@ class Button():
         self.image_mouse_on = pygame.transform.scale(button_list[1],
                                                      (int(self.width * scale), int(self.height * scale)))
 
-        self.new_mouse_img = pygame.image.load('Images/mouse/new_mouse_button.png').convert_alpha()
+        self.new_mouse_img = pygame.image.load('Clyde/Images/mouse/new_mouse_button.png').convert_alpha()
         self.new_mouse_img = pygame.transform.scale(self.new_mouse_img, (int(self.new_mouse_img.get_width() * 4), int(self.new_mouse_img.get_height() * 4)))
 
         self.rect = self.image_unclick.get_rect()
@@ -117,36 +117,36 @@ class Button_level():
 # ------------------------------------------------------------------------ #
 
 
-ibutton = pygame.image.load("Images/Buttons/Button_to_press/I_boutton1.png").convert_alpha()
+ibutton = pygame.image.load("Clyde/Images/Buttons/Button_to_press/I_boutton1.png").convert_alpha()
 ibutton = pygame.transform.scale(ibutton, (ibutton.get_width() * 2, ibutton.get_height() * 2))
 
-ibutton2 = pygame.image.load("Images/Buttons/Button_to_press/I_boutton2.png").convert_alpha()
+ibutton2 = pygame.image.load("Clyde/Images/Buttons/Button_to_press/I_boutton2.png").convert_alpha()
 ibutton2 = pygame.transform.scale(ibutton2, (ibutton2.get_width() * 2, ibutton2.get_height() * 2))
 
 ibutton_list = [ibutton, ibutton2]
 
 # load buttons
 #play
-image_play_button_unclick = pygame.image.load('Images/Buttons/Play/0.png').convert_alpha()
-image_play_button_mouse_on = pygame.image.load('Images/Buttons/Play/1.png').convert_alpha()
-image_play_button_click = pygame.image.load('Images/Buttons/Play/2.png').convert_alpha()
+image_play_button_unclick = pygame.image.load('Clyde/Images/Buttons/Play/0.png').convert_alpha()
+image_play_button_mouse_on = pygame.image.load('Clyde/Images/Buttons/Play/1.png').convert_alpha()
+image_play_button_click = pygame.image.load('Clyde/Images/Buttons/Play/2.png').convert_alpha()
 
 play_button_list = [image_play_button_unclick,image_play_button_mouse_on]
 
 #exit
-image_exit_button_unclick = pygame.image.load('Images/Buttons/Exit/0.png').convert_alpha()
-image_exit_button_mouse_on = pygame.image.load('Images/Buttons/Exit/1.png').convert_alpha()
-image_exit_button_click = pygame.image.load('Images/Buttons/Exit/2.png').convert_alpha()
+image_exit_button_unclick = pygame.image.load('Clyde/Images/Buttons/Exit/0.png').convert_alpha()
+image_exit_button_mouse_on = pygame.image.load('Clyde/Images/Buttons/Exit/1.png').convert_alpha()
+image_exit_button_click = pygame.image.load('Clyde/Images/Buttons/Exit/2.png').convert_alpha()
 
 exit_button_list = [image_exit_button_unclick,image_exit_button_mouse_on]
 
 
-image_restart_button_unclick = pygame.image.load('Images/Buttons/Restart/0.png').convert_alpha()
-image_restart_button_mouse_on = pygame.image.load('Images/Buttons/Restart/1.png').convert_alpha()
+image_restart_button_unclick = pygame.image.load('Clyde/Images/Buttons/Restart/0.png').convert_alpha()
+image_restart_button_mouse_on = pygame.image.load('Clyde/Images/Buttons/Restart/1.png').convert_alpha()
 
 restart_button_list = [image_restart_button_unclick, image_restart_button_mouse_on]
 
-title_img = pygame.image.load('Images/Logo/title.png').convert_alpha()
+title_img = pygame.image.load('Clyde/Images/Logo/title.png').convert_alpha()
 title_img = pygame.transform.scale(title_img,(title_img.get_width() * 5, title_img.get_height() * 5))
 
 
