@@ -1,6 +1,6 @@
 # Clyde
 
-A 2D platformer made for a school projet, where you play as a robot that must cure the infected robots he encounter on his path.
+A 2D platformer, made for a school projet, where you play as a robot that must cure the infected robots he encounter on his path.
 
 Made with pygame.
 
