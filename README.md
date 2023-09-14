@@ -2,6 +2,8 @@
 
 A 2D platformer, made for a school projet, where you play as a robot that must cure the infected robots he encounter on his path.
 
+Launch the main.exe file to play the game.
+
 Made with pygame.
 
 ![T8bJEx](https://github.com/Yohan27x/Isometric-Builder/assets/81105099/5939e71d-dd9a-4001-8cb0-5418bcdcb987)
