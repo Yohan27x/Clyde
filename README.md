@@ -2,7 +2,7 @@
 
 A 2D platformer, made for a school projet, where you play as a robot that must cure the infected robots he encounter on his path.
 
-Launch the main.exe file to play the game.
+Execute the main.exe file in the project to play the game.
 
 Made with pygame.
 
