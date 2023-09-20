@@ -6,7 +6,8 @@ Made with pygame.
 Execute the main.exe file in the project to play the game.
 
 
-" You are playing as a robot that must cure the infected robots he encounter on his path." 
+
+Play as a robot that must cure the infected robots he encounter on his path !
 
 
 ![ezgif-5-a24473d850](https://github.com/Yohan27x/Clyde/assets/81105099/4978aa21-c4d7-46dd-886a-31be9e538f07)
