@@ -1,8 +1,6 @@
 import pygame, csv
 from button import *
 
-
-
 pygame.init()
 
 clock = pygame.time.Clock()

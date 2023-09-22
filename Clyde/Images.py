@@ -1,7 +1,5 @@
 import pygame, os
 
-
-
 SCREEN_WIDTH = 800
 SCREEN_HEIGHT = 640
 screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
@@ -10,12 +8,7 @@ ROWS = 60
 COLS = 300
 TILE_SIZE = SCREEN_HEIGHT // ROWS + 30 # +30 pour avoir la meme taille que dans le file level editor
 
-
 TILE_TYPES = 46
-
-
-
-
 
 # store tiles in a list
 img_list = []
@@ -36,11 +29,6 @@ for x in range(TILE_TYPES):
     img_list.append(img)
 
 
-
-
-
-
-
 def animation(char_type, scale, animation_types):
     big_list = []
     for animation in animation_types:
@@ -57,10 +45,6 @@ def animation(char_type, scale, animation_types):
     return big_list
 
 
-
-
-
-
 first_layer = pygame.image.load('Clyde/Images/background/first_layer.png').convert_alpha()
 first_layer = pygame.transform.scale(first_layer, (800, 640))
 
@@ -70,15 +54,10 @@ second_layer = pygame.transform.scale(second_layer, (800, 640))
 last_layer = pygame.image.load('Clyde/Images/background/last_layer.png').convert_alpha()
 last_layer = pygame.transform.scale(last_layer, (800, 640))
 
-
-
-
 menu_bg = pygame.image.load('Clyde/Images/menu_background/background_menu.png').convert_alpha()
 menu_bg = pygame.transform.scale(menu_bg, (800, 640))
 
-
 missile_img = pygame.image.load('Clyde/Images/roof enemy/grenade.png').convert_alpha()
-
 
 img_health_item = pygame.image.load('Clyde/Images/Icons/health_icon.png').convert()
 img_health_item = pygame.transform.scale(img_health_item, (img_health_item.get_width() * 4 , img_health_item .get_height() * 4))

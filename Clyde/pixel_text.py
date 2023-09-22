@@ -87,7 +87,6 @@ class Newfont():
 
 # ------------------------------------------------------------------------ #
 
-
 font_list = []
 for i in range(60):
     large_font = pygame.image.load("Clyde/Images/Font/large_font.png").convert()
@@ -102,7 +101,6 @@ for i in range(30):
 
 
 
-
 # thanks for playing
 Fontt_high_thanks = Newfont('Thanks',font_list[0], 56, 26, 5)
 Fontt_shade_thanks = Newfont('Thanks',font_list[1], 56, 27, 5)
@@ -113,7 +111,6 @@ Fontt_shade_for = Newfont('For',font_list[3], 68, 46, 5)
 Fontt_high_playing = Newfont('Playing !',font_list[4],56, 65, 5)
 Fontt_shade_playing = Newfont('Playing !',font_list[5], 56, 66, 5)
 
-
 # bad end
 Fontt_high_bad = Newfont('Bad',font_list[6], 65, 22, 5)
 Fontt_shade_bad = Newfont('Bad',font_list[7], 65, 23, 5)
@@ -123,9 +120,6 @@ Fontt_shade_end = Newfont('End',font_list[9], 69, 40, 5)
 
 Fontt_high_lessthan =  Newfont('You saved less than 12 robots ...',font_list[22], 30, 125, 3)
 Fontt_shade_lessthan =  Newfont('You saved less than 12 robots ...',font_list[23], 30, 126, 3)
-
-
-
 
 # good end
 Fontt_high_good = Newfont('Good',font_list[10], 62, 22, 5)
@@ -142,7 +136,6 @@ Fontt_shade_morethan =  Newfont('You saved 12 or more robots !',font_list[25], 3
 Fontt_high_credits = Newfont('Credits :',font_list[14], 49, 17, 5)
 Fontt_shade_credits = Newfont('Credits :',font_list[15], 49, 18, 5)
 
-
 # -------------------
 
 Fontt_high_adrien = Newfont('- Adrien : Characters Animation',font_list[18], 4, 80, 3)
@@ -154,24 +147,10 @@ Fontt_shade_yohan = Newfont('- Yohan : Programmer ',font_list[17], 4, 101, 3)
 Fontt_high_others =  Newfont('-Buakaw, Lea, Thomas, Minh and others!',font_list[26], 4, 120, 3)
 Fontt_shade_others =  Newfont('-Buakaw, Lea, Thomas, Minh and others!',font_list[27], 4, 121, 3)
 
-#Fontt_high_ytb =  Newfont('-CodeWithRuss, DaFluffyPotato ',font_list[28], 30, 160, 3)
-#Fontt_shade_ytb =  Newfont('-CodeWithRuss, DaFluffyPotato ',font_list[29], 30, 161, 3)
-
-
-
-
-
-#----------------
-
-
-
-
 num = 0
 num_list = []
 
 j = 0
-
-# dx = 0 if pause_game == True else dx
 
 for i in range(30,53):
 
@@ -184,13 +163,9 @@ for i in range(30,53):
     j += 1
 
 
-
 font_list[53] = palette_swap(font_list[53], font_list[53], (255, 0, 0), WHITE) # 53 avant 45
-
 Fontt_num_max_robot_saved = Newfont(' 18',font_list[53], 50, 71, 1) #53
 
 font_list[54] = palette_swap(font_list[54], font_list[54], (255, 0, 0), WHITE) #54 avant 46
-
-
 Fontt_pause_high = Newfont("Pause",font_list[54], 82,60, 4) #54
 

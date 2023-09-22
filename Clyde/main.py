@@ -3,7 +3,7 @@ import random, sys, csv
 
 from pygame import mixer
 
-# import the different files we wrote
+# import files
 from button import *
 from pixel_text import *
 from objects_group import *
@@ -11,15 +11,14 @@ from Images import *
 from Musics import *
 
 pygame.init()
-mixer.init()  # initialiser la musique
+mixer.init()  # init music
 
 SCREEN_WIDTH = 800
 SCREEN_HEIGHT = 640
 
-FPS = 60
 
 # set framerate
-
+FPS = 60
 clock = pygame.time.Clock()
 
 flags = pygame.SCALED
@@ -35,13 +34,11 @@ pause_surface = pygame.Surface((SCREEN_WIDTH, SCREEN_HEIGHT))
 pause_surface.fill((0, 0, 0))
 pause_surface.set_alpha(90)
 
-# define game variables ---------- #
-
+# Game variables ---------- #
 
 ROWS = 60
 COLS = 300
 TILE_SIZE = SCREEN_HEIGHT // ROWS + 30
-
 
 TILE_TYPES = 43
 
@@ -59,8 +56,8 @@ start_intro = False
 game_end = True
 type_of_game_end = None
 
-# define player action variables ------------ #
 
+# - Player action status
 moving_left = False
 moving_right = False
 
@@ -95,7 +92,6 @@ player_ammo = 0
 
 # images variables --------- #
 
-
 blit_button_once = True
 blit_ibutton_cd = 20
 ibutton_index = 0
@@ -103,7 +99,6 @@ ibutton_index = 0
 first_game_layer = False
 menu_on = True
 
-# define colours
 BG = (144, 201, 120)
 RED = (255, 0, 0)
 GREEN = (24, 233, 75)
@@ -113,10 +108,10 @@ PURPLE = (34, 32, 52)
 BLUE = (146,166,239)
 
 
-# FUNCTIONS
+# -------------- FUNCTIONS ---------------
 
 
-# draw the background ----------- #
+# draw background 
 
 def draw_bg():
     screen.fill((0, 0, 2))
@@ -127,10 +122,6 @@ def draw_bg():
         screen.blit(last_layer, ((x * width) - tile_bg_scroll[0] * 0.3, 0))
         screen.blit(second_layer, ((x * width) - tile_bg_scroll[0] * 0.3, 0))
         screen.blit(first_layer, ((x * width) - tile_bg_scroll[0] * 0.6, 0))
-
-
-# ---------------------------------- #
-
 
 # Fade systems -------------- #
 
@@ -223,7 +214,7 @@ def draw_game_surface():
     draw_copy_game(player_pos_x, player_pos_y)
 
 
-def copy_good_end_surface():  # fail c'est thanks for playing, pas good end
+def copy_good_end_surface(): 
     screen.fill((0, 0, 0))
     Fontt_shade_good.draw()
     Fontt_high_good.draw()
@@ -256,7 +247,7 @@ def draw_bad_end_surface():
     copy_bad_end_surface()
 
 
-def copy_credits_surface():  # thanks for playing mais pas grave
+def copy_credits_surface(): 
     screen.fill((0, 0, 0))
     Fontt_shade_credits.draw()
     Fontt_high_credits.draw()
@@ -291,23 +282,21 @@ def draw_thanks_surface():
     copy_thanks_surface()
 
 
-def fade(window, fade_what):  # menu_display , MENU / screen , GAME
-    fade = pygame.Surface((SCREEN_WIDTH, SCREEN_HEIGHT))  # on crée une surface de la taille du screen principal
-    fade.fill((0, 0, 0))  # on la remplit de noir
+def fade(window, fade_what):
+    fade = pygame.Surface((SCREEN_WIDTH, SCREEN_HEIGHT))  # create surface with same size as principal screen
+    fade.fill((0, 0, 0))  # fill with black
 
     for alpha in range(0, 255, 2):
 
         if alpha == 253:
             break
 
-        fade.set_alpha(
-            alpha)  # on l'a met transparente de base et on l'a fait devenir de moins en moins transparent --> retour a sa couleur initiale
-        # toutes les surfaces que nous allons être amené a fade tout au long du jeu
-        if fade_what == 'MENU':  # si on est sur le menu
-            draw_menu_surface()  # alors on veut le redessiner
-        elif fade_what == 'GAME':  # si on est sur le jeu
-            draw_game_surface()  # alors on veut le redessiner
-        elif fade_what == 'GOOD END':  # ...
+        fade.set_alpha(alpha)  
+        if fade_what == 'MENU': 
+            draw_menu_surface()  
+        elif fade_what == 'GAME': 
+            draw_game_surface() 
+        elif fade_what == 'GOOD END':  
             draw_good_end_surface()
         elif fade_what == 'BAD END':
             draw_bad_end_surface()
@@ -316,24 +305,22 @@ def fade(window, fade_what):  # menu_display , MENU / screen , GAME
         elif fade_what == 'THANKS FOR PLAYING ':
             draw_thanks_surface()
 
-        # pas de thanks for playing car il est en dernier et on ne veut pas le fade car le jeu s'arrète
 
-        window.blit(fade, (0, 0))  # on blit sur le screen la surface fade
+        window.blit(fade, (0, 0))  
 
         if fade_what == 'MENU':
-            screen.blit(window, (0,
-                                 0))  # on blit sur le screen principal le menu_display qui contient 2 surfaces : le menu dessiné et la surface fade
+            screen.blit(window, (0,0))
 
-        pygame.display.update()  # on update le display
+        pygame.display.update()
 
 
 def unfade(unfade_what):
-    # surface pour le fade_out
+  
     unfade = pygame.Surface((SCREEN_WIDTH, SCREEN_HEIGHT))
     unfade.fill((0, 0, 0))
 
     for alpha in range(255, 0, -1, ):
-        unfade.set_alpha(alpha - 4)  # devient de plus en plus transparent
+        unfade.set_alpha(alpha - 4)  # become little by little transparent
 
         if unfade_what == 'MENU':
             draw_game_surface()
@@ -357,11 +344,7 @@ def unfade(unfade_what):
         pygame.display.update()
 
 
-# ------------------------------------------------------------- #
-
-
 # ENEMY AND PLAYER CLASS -------------------- #
-
 
 class Enemy(pygame.sprite.Sprite):
     def __init__(self, char_type, x, y, scale, speed):
@@ -426,7 +409,7 @@ class Enemy(pygame.sprite.Sprite):
 
         self.collision_rect = pygame.Rect(0, 0, 34, 94)
 
-        self.deathblock_rect = pygame.Rect(0, 0, 20, -3) # rect qui permet de compenser la petite chute lorsque le robot ennemi tombe dans les blocs noir
+        self.deathblock_rect = pygame.Rect(0, 0, 20, -3) # permet de compenser la petite chute lorsque le robot ennemi tombe dans les blocs noir
 
         self.explosion_scale = pygame.Rect(0, 0, 115, 94)
 
@@ -497,10 +480,6 @@ class Enemy(pygame.sprite.Sprite):
         self.collision_rect.midbottom = self.rect.midbottom
         self.deathblock_rect.midbottom = self.rect.midbottom
         self.explosion_scale.midbottom = self.rect.midbottom
-
-
-
-
 
     def attack(self):
 
@@ -709,9 +688,7 @@ class Enemy(pygame.sprite.Sprite):
                     self.update_action(7)
                     self.trigger_anim = True
                     # pygame.draw.rect(screen,RED, (self.vision.x - tile_bg_scroll[0], self.vision.y - tile_bg_scroll[1], self.vision.width, self.vision.height))
-
-
-
+                    
             else:
                 if self.idling == False and self.hurt == False:
                     if self.direction == 1:

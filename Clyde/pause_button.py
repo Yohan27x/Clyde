@@ -3,7 +3,6 @@ import random, sys, csv
 
 from pygame import mixer
 
-
 # import the different files we wrote
 from button import *
 from pixel_text import *
@@ -11,38 +10,25 @@ from objects_group import *
 from Images import *
 from Musics import *
 
-
 pygame.init()
-mixer.init() # initialiser la musique
-
+mixer.init() 
 
 SCREEN_WIDTH = 800
 SCREEN_HEIGHT = 640
 
-
 FPS = 60
-
-# set framerate
-
 clock = pygame.time.Clock()
 
 flags = pygame.SCALED
-
 game_icon = pygame.image.load('Images/game_window_icon/icon.png')
 pygame.display.set_icon(game_icon)
 screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT), flags, vsync=1)
 pygame.display.set_caption('Clyde')
 
 menu_display = pygame.Surface((SCREEN_WIDTH,SCREEN_HEIGHT))
-
-
-
 pause_surface = pygame.Surface((SCREEN_WIDTH,SCREEN_HEIGHT))
 pause_surface.fill((0,0,0))
 pause_surface.set_alpha(85)
-
-# define game variables ---------- #
-
 
 ROWS = 60
 COLS = 300
@@ -56,17 +42,12 @@ MAX_LEVELS = 7
 GRAVITY = 0.75
 true_scroll = [0, 0]
 screen_shake = 0
-
-
 pause_game = False
 
 start_game = False  # trigger
 start_intro = False
 game_end = True
 type_of_game_end = None
-
-
-# define player action variables ------------ #
 
 moving_left = False
 moving_right = False
@@ -93,8 +74,6 @@ shoot_front = False
 
 trigger_anim = True
 
-
-
 player_pos_x = 0
 player_pos_y = 0
 
@@ -106,12 +85,9 @@ player_ammo = 0
 
 # images variables --------- #
 
-
-
 blit_button_once = True
 blit_ibutton_cd = 20
 ibutton_index = 0
-
 
 first_game_layer = False
 menu_on = True
@@ -125,11 +101,6 @@ PINK = (235, 65, 54)
 PURPLE = (34,32,52)
 
 
-
-# FUNCTIONS
-
-
-# draw the background ----------- #
 
 def draw_bg():
     screen.fill((0, 0, 2))
